@@ -15,6 +15,10 @@ check_root()
 # check root user
 check_root
 
+# backups
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+# use aliyun mirrors
+sudo sed -i 's:archive.ubuntu.com:mirrors.aliyun.com:g' /etc/apt/sources.list
 
 # update source cache
 apt-get update
